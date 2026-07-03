@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-tool-harness"
+version = "0.1.0"
+description = "A minimal, extensible tool-calling agent harness for OpenAI models."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = [
+    "openai>=1.40.0",
+    "python-dotenv>=1.0.1",
+    "pydantic>=2.7.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.2.0", "pytest-mock>=3.14.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
